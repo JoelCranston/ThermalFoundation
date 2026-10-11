@@ -1,0 +1,19 @@
+{
+  "type": "thermal:smelter_recycle",
+  "ingredient": {
+    "tag": "c:tools/bronze"
+  },
+  "result": [
+    {
+      "item": "thermal:bronze_ingot",
+      "count": 1
+    }
+  ],
+  "experience": 0.3,
+  "neoforge:conditions": [
+    {
+      "tag": "c:tools/bronze",
+      "type": "cofh_core:tag_exists"
+    }
+  ]
+}

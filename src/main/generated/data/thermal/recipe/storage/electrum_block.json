@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:ingots/electrum",
+    "I": "thermal:electrum_ingot"
+  },
+  "pattern": [
+    "###",
+    "#I#",
+    "###"
+  ],
+  "result": {
+    "id": "thermal:electrum_block"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:ingots/silver",
+    "I": "thermal:silver_ingot"
+  },
+  "pattern": [
+    "###",
+    "#I#",
+    "###"
+  ],
+  "result": {
+    "id": "thermal:silver_block"
+  }
+}

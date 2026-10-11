@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:nuggets/bronze",
+    "I": "thermal:bronze_nugget"
+  },
+  "pattern": [
+    "###",
+    "#I#",
+    "###"
+  ],
+  "result": {
+    "id": "thermal:bronze_ingot"
+  }
+}

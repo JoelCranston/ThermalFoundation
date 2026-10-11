@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:ingots/lead",
+    "I": "thermal:lead_ingot"
+  },
+  "pattern": [
+    "###",
+    "#I#",
+    "###"
+  ],
+  "result": {
+    "id": "thermal:lead_block"
+  }
+}

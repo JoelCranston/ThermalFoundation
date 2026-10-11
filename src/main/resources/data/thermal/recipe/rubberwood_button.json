@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    "thermal:rubberwood_planks"
+  ],
+  "result": {
+    "id": "thermal:rubberwood_button"
+  }
+}

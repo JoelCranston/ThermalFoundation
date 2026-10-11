@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:nuggets/invar",
+    "I": "thermal:invar_nugget"
+  },
+  "pattern": [
+    "###",
+    "#I#",
+    "###"
+  ],
+  "result": {
+    "id": "thermal:invar_ingot"
+  }
+}

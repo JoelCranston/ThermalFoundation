@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "neoforge:ingredient_type": "neoforge:compound",
+      "children": [
+        "#c:dusts/copper",
+        "#c:ingots/copper"
+      ]
+    },
+    {
+      "neoforge:ingredient_type": "neoforge:compound",
+      "children": [
+        "#c:dusts/copper",
+        "#c:ingots/copper"
+      ]
+    },
+    {
+      "neoforge:ingredient_type": "neoforge:compound",
+      "children": [
+        "#c:dusts/copper",
+        "#c:ingots/copper"
+      ]
+    },
+    {
+      "neoforge:ingredient_type": "neoforge:compound",
+      "children": [
+        "#c:dusts/tin",
+        "#c:ingots/tin"
+      ]
+    },
+    "minecraft:fire_charge"
+  ],
+  "result": {
+    "count": 4,
+    "id": "thermal:bronze_ingot"
+  }
+}

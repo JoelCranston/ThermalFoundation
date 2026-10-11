@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "neoforge:ingredient_type": "neoforge:compound",
+      "children": [
+        "#c:dusts/iron",
+        "#c:ingots/iron"
+      ]
+    },
+    {
+      "neoforge:ingredient_type": "neoforge:compound",
+      "children": [
+        "#c:dusts/iron",
+        "#c:ingots/iron"
+      ]
+    },
+    {
+      "neoforge:ingredient_type": "neoforge:compound",
+      "children": [
+        "#c:dusts/nickel",
+        "#c:ingots/nickel"
+      ]
+    },
+    "minecraft:fire_charge"
+  ],
+  "result": {
+    "count": 3,
+    "id": "thermal:invar_ingot"
+  }
+}

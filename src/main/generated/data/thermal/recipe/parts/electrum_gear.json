@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "#c:ingots/electrum",
+    "i": "#c:nuggets/iron"
+  },
+  "pattern": [
+    " # ",
+    "#i#",
+    " # "
+  ],
+  "result": {
+    "id": "thermal:electrum_gear"
+  }
+}

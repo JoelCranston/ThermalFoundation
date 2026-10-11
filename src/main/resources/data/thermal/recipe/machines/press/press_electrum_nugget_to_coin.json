@@ -1,0 +1,24 @@
+{
+  "type": "thermal:press",
+  "ingredients": [
+    {
+      "tag": "c:nuggets/electrum",
+      "count": 3
+    },
+    {
+      "item": "thermal:press_coin_die"
+    }
+  ],
+  "result": [
+    {
+      "item": "thermal:electrum_coin"
+    }
+  ],
+  "energy": 800,
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "thermal:press_coin_die"
+    }
+  ]
+}

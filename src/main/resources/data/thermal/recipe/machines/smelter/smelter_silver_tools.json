@@ -1,0 +1,19 @@
+{
+  "type": "thermal:smelter_recycle",
+  "ingredient": {
+    "tag": "c:tools/silver"
+  },
+  "result": [
+    {
+      "item": "thermal:silver_ingot",
+      "count": 1
+    }
+  ],
+  "experience": 0.4,
+  "neoforge:conditions": [
+    {
+      "tag": "c:tools/silver",
+      "type": "cofh_core:tag_exists"
+    }
+  ]
+}

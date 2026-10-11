@@ -1,0 +1,34 @@
+{
+  "type": "thermal:smelter",
+  "ingredients": [
+    {
+      "value": [
+        {
+          "tag": "c:ingots/gold"
+        },
+        {
+          "tag": "c:dusts/gold"
+        }
+      ],
+      "count": 1
+    },
+    {
+      "value": [
+        {
+          "tag": "c:ingots/silver"
+        },
+        {
+          "tag": "c:dusts/silver"
+        }
+      ],
+      "count": 1
+    }
+  ],
+  "result": [
+    {
+      "item": "thermal:electrum_ingot",
+      "count": 2
+    }
+  ],
+  "energy": 3200
+}
