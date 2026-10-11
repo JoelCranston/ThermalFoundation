@@ -1,0 +1,10 @@
+{
+  "values": {
+    "thermal:rubberwood_leaves": {
+      "chance": 0.3
+    },
+    "thermal:rubberwood_sapling": {
+      "chance": 0.3
+    }
+  }
+}

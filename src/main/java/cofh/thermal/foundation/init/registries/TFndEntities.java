@@ -2,13 +2,14 @@ package cofh.thermal.foundation.init.registries;
 
 import cofh.core.common.entity.BoatCoFH;
 import cofh.core.common.entity.ChestBoatCoFH;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.entity.vehicle.Boat;
-
-import java.util.function.Supplier;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import static cofh.thermal.core.ThermalCore.ENTITIES;
+import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.foundation.init.registries.TFndIDs.ID_RUBBERWOOD_BOAT;
 import static cofh.thermal.foundation.init.registries.TFndIDs.ID_RUBBERWOOD_CHEST_BOAT;
 
@@ -22,7 +23,7 @@ public class TFndEntities {
 
     }
 
-    public static final Supplier<EntityType<? extends Boat>> RUBBERWOOD_BOAT = ENTITIES.register(ID_RUBBERWOOD_BOAT, () -> EntityType.Builder.<BoatCoFH>of(BoatCoFH::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10).build(ID_RUBBERWOOD_BOAT));
-    public static final Supplier<EntityType<? extends Boat>> RUBBERWOOD_CHEST_BOAT = ENTITIES.register(ID_RUBBERWOOD_CHEST_BOAT, () -> EntityType.Builder.<ChestBoatCoFH>of(ChestBoatCoFH::new, MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10).build(ID_RUBBERWOOD_CHEST_BOAT));
+    public static final DeferredHolder<EntityType<?>, EntityType<BoatCoFH>> RUBBERWOOD_BOAT = ENTITIES.register(ID_RUBBERWOOD_BOAT, id -> EntityType.Builder.<BoatCoFH>of((type, level) -> new BoatCoFH(type, level, ITEMS.getSup(ID_RUBBERWOOD_BOAT)), MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10).build(ResourceKey.create(Registries.ENTITY_TYPE, id)));
+    public static final DeferredHolder<EntityType<?>, EntityType<ChestBoatCoFH>> RUBBERWOOD_CHEST_BOAT = ENTITIES.register(ID_RUBBERWOOD_CHEST_BOAT, id -> EntityType.Builder.<ChestBoatCoFH>of((type, level) -> new ChestBoatCoFH(type, level, ITEMS.getSup(ID_RUBBERWOOD_CHEST_BOAT)), MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10).build(ResourceKey.create(Registries.ENTITY_TYPE, id)));
 
 }

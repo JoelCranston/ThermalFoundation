@@ -6,9 +6,9 @@ import cofh.core.common.item.BoatItemCoFH;
 import cofh.lib.common.item.HangingSignItemCoFH;
 import cofh.lib.common.item.SignItemCoFH;
 
-import static cofh.lib.util.Utils.itemProperties;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL_FOUNDATION;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
+import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.registries.ThermalCreativeTabs.blocksTab;
 import static cofh.thermal.core.init.registries.ThermalCreativeTabs.toolsTab;
 import static cofh.thermal.core.util.RegistrationHelper.*;
@@ -25,7 +25,6 @@ public class TFndItems {
 
     public static void register() {
 
-
         registerMetalSet("tin", ID_THERMAL_FOUNDATION);
         registerMetalSet("lead", ID_THERMAL_FOUNDATION);
         registerMetalSet("silver", ID_THERMAL_FOUNDATION);
@@ -37,11 +36,11 @@ public class TFndItems {
         registerGemSet("ruby", ID_THERMAL_FOUNDATION);
         registerGemSet("sapphire", ID_THERMAL_FOUNDATION);
 
-        toolsTab(250, registerItem(ID_RUBBERWOOD_BOAT, () -> new BoatItemCoFH(RUBBERWOOD_BOAT, BoatCoFH::new, itemProperties()).setModId(ID_THERMAL_FOUNDATION)));
-        toolsTab(250, registerItem(ID_RUBBERWOOD_CHEST_BOAT, () -> new BoatItemCoFH(RUBBERWOOD_CHEST_BOAT, ChestBoatCoFH::new, itemProperties()).setModId(ID_THERMAL_FOUNDATION)));
+        toolsTab(250, registerItem(ID_RUBBERWOOD_BOAT, id -> new BoatItemCoFH(RUBBERWOOD_BOAT, (type, level, x, y, z) -> new BoatCoFH(RUBBERWOOD_BOAT::get, level, ITEMS.getSup(ID_RUBBERWOOD_BOAT), x, y, z), itemProperties(id)).setModId(ID_THERMAL_FOUNDATION)));
+        toolsTab(250, registerItem(ID_RUBBERWOOD_CHEST_BOAT, id -> new BoatItemCoFH(RUBBERWOOD_CHEST_BOAT, (type, level, x, y, z) -> new ChestBoatCoFH(RUBBERWOOD_CHEST_BOAT::get, level, ITEMS.getSup(ID_RUBBERWOOD_CHEST_BOAT), x, y, z), itemProperties(id)).setModId(ID_THERMAL_FOUNDATION)));
 
-        blocksTab(150, registerItem("rubberwood_sign", () -> new SignItemCoFH(itemProperties().stacksTo(16), BLOCKS.get("rubberwood_sign"), BLOCKS.get("rubberwood_wall_sign")).setModId(ID_THERMAL_FOUNDATION)));
-        blocksTab(150, registerItem("rubberwood_hanging_sign", () -> new HangingSignItemCoFH(BLOCKS.get("rubberwood_hanging_sign"), BLOCKS.get("rubberwood_wall_hanging_sign"), itemProperties().stacksTo(16)).setModId(ID_THERMAL_FOUNDATION)));
+        blocksTab(150, registerItem("rubberwood_sign", id -> new SignItemCoFH(blockItemProperties(id).stacksTo(16), BLOCKS.get("rubberwood_sign"), BLOCKS.get("rubberwood_wall_sign")).setModId(ID_THERMAL_FOUNDATION)));
+        blocksTab(150, registerItem("rubberwood_hanging_sign", id -> new HangingSignItemCoFH(BLOCKS.get("rubberwood_hanging_sign"), BLOCKS.get("rubberwood_wall_hanging_sign"), blockItemProperties(id).stacksTo(16)).setModId(ID_THERMAL_FOUNDATION)));
     }
 
 }

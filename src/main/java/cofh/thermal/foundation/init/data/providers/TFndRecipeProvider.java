@@ -2,11 +2,15 @@ package cofh.thermal.foundation.init.data.providers;
 
 import cofh.lib.init.data.RecipeProviderCoFH;
 import cofh.lib.init.tags.ItemTagsCoFH;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.Tags;
+
+import java.util.concurrent.CompletableFuture;
 
 import static cofh.lib.util.constants.ModIds.ID_THERMAL;
 import static cofh.thermal.core.ThermalCore.ITEMS;
@@ -15,14 +19,15 @@ import static net.minecraft.data.recipes.RecipeCategory.MISC;
 
 public class TFndRecipeProvider extends RecipeProviderCoFH {
 
-    public TFndRecipeProvider(PackOutput output) {
+    public TFndRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
 
-        super(output, ID_THERMAL);
+        super(registries, output, ID_THERMAL);
     }
 
     @Override
-    protected void buildRecipes(RecipeOutput recipeOutput) {
+    protected void buildRecipes() {
 
+        RecipeOutput recipeOutput = output;
         var reg = ITEMS;
 
         generateTypeRecipes(reg, recipeOutput, "lead");
@@ -58,7 +63,7 @@ public class TFndRecipeProvider extends RecipeProviderCoFH {
 
         var reg = ITEMS;
 
-        ShapelessRecipeBuilder.shapeless(MISC, reg.get("bronze_dust"), 4)
+        ShapelessRecipeBuilder.shapeless(items, MISC, reg.get("bronze_dust"), 4)
                 .requires(ItemTagsCoFH.DUSTS_COPPER)
                 .requires(ItemTagsCoFH.DUSTS_COPPER)
                 .requires(ItemTagsCoFH.DUSTS_COPPER)
@@ -67,21 +72,21 @@ public class TFndRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_tin_dust", has(ItemTagsCoFH.DUSTS_TIN))
                 .save(consumer, ID_THERMAL + ":bronze_dust_4");
 
-        ShapelessRecipeBuilder.shapeless(MISC, reg.get("constantan_dust"), 2)
+        ShapelessRecipeBuilder.shapeless(items, MISC, reg.get("constantan_dust"), 2)
                 .requires(ItemTagsCoFH.DUSTS_COPPER)
                 .requires(ItemTagsCoFH.DUSTS_NICKEL)
                 .unlockedBy("has_copper_dust", has(ItemTagsCoFH.DUSTS_COPPER))
                 .unlockedBy("has_nickel_dust", has(ItemTagsCoFH.DUSTS_NICKEL))
                 .save(consumer, ID_THERMAL + ":constantan_dust_2");
 
-        ShapelessRecipeBuilder.shapeless(MISC, reg.get("electrum_dust"), 2)
+        ShapelessRecipeBuilder.shapeless(items, MISC, reg.get("electrum_dust"), 2)
                 .requires(ItemTagsCoFH.DUSTS_GOLD)
                 .requires(ItemTagsCoFH.DUSTS_SILVER)
                 .unlockedBy("has_gold_dust", has(ItemTagsCoFH.DUSTS_GOLD))
                 .unlockedBy("has_silver_dust", has(ItemTagsCoFH.DUSTS_SILVER))
                 .save(consumer, ID_THERMAL + ":electrum_dust_2");
 
-        ShapelessRecipeBuilder.shapeless(MISC, reg.get("invar_dust"), 3)
+        ShapelessRecipeBuilder.shapeless(items, MISC, reg.get("invar_dust"), 3)
                 .requires(ItemTagsCoFH.DUSTS_IRON)
                 .requires(ItemTagsCoFH.DUSTS_IRON)
                 .requires(ItemTagsCoFH.DUSTS_NICKEL)
@@ -89,7 +94,7 @@ public class TFndRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_nickel_dust", has(ItemTagsCoFH.DUSTS_NICKEL))
                 .save(consumer, ID_THERMAL + ":invar_dust_3");
 
-        ShapelessRecipeBuilder.shapeless(MISC, reg.get("bronze_ingot"), 4)
+        ShapelessRecipeBuilder.shapeless(items, MISC, reg.get("bronze_ingot"), 4)
                 .requires(fromTags(ItemTagsCoFH.DUSTS_COPPER, Tags.Items.INGOTS_COPPER))
                 .requires(fromTags(ItemTagsCoFH.DUSTS_COPPER, Tags.Items.INGOTS_COPPER))
                 .requires(fromTags(ItemTagsCoFH.DUSTS_COPPER, Tags.Items.INGOTS_COPPER))
@@ -101,7 +106,7 @@ public class TFndRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_tin_ingot", has(ItemTagsCoFH.INGOTS_TIN))
                 .save(consumer, ID_THERMAL + ":fire_charge/bronze_ingot_4");
 
-        ShapelessRecipeBuilder.shapeless(MISC, reg.get("constantan_ingot"), 2)
+        ShapelessRecipeBuilder.shapeless(items, MISC, reg.get("constantan_ingot"), 2)
                 .requires(fromTags(ItemTagsCoFH.DUSTS_COPPER, Tags.Items.INGOTS_COPPER))
                 .requires(fromTags(ItemTagsCoFH.DUSTS_NICKEL, ItemTagsCoFH.INGOTS_NICKEL))
                 .requires(Items.FIRE_CHARGE)
@@ -111,7 +116,7 @@ public class TFndRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_nickel_ingot", has(ItemTagsCoFH.INGOTS_NICKEL))
                 .save(consumer, ID_THERMAL + ":fire_charge/constantan_ingot_2");
 
-        ShapelessRecipeBuilder.shapeless(MISC, reg.get("electrum_ingot"), 2)
+        ShapelessRecipeBuilder.shapeless(items, MISC, reg.get("electrum_ingot"), 2)
                 .requires(fromTags(ItemTagsCoFH.DUSTS_GOLD, Tags.Items.INGOTS_GOLD))
                 .requires(fromTags(ItemTagsCoFH.DUSTS_SILVER, ItemTagsCoFH.INGOTS_SILVER))
                 .requires(Items.FIRE_CHARGE)
@@ -121,7 +126,7 @@ public class TFndRecipeProvider extends RecipeProviderCoFH {
                 .unlockedBy("has_silver_ingot", has(ItemTagsCoFH.INGOTS_SILVER))
                 .save(consumer, ID_THERMAL + ":fire_charge/electrum_ingot_2");
 
-        ShapelessRecipeBuilder.shapeless(MISC, reg.get("invar_ingot"), 3)
+        ShapelessRecipeBuilder.shapeless(items, MISC, reg.get("invar_ingot"), 3)
                 .requires(fromTags(ItemTagsCoFH.DUSTS_IRON, Tags.Items.INGOTS_IRON))
                 .requires(fromTags(ItemTagsCoFH.DUSTS_IRON, Tags.Items.INGOTS_IRON))
                 .requires(fromTags(ItemTagsCoFH.DUSTS_NICKEL, ItemTagsCoFH.INGOTS_NICKEL))
@@ -133,4 +138,26 @@ public class TFndRecipeProvider extends RecipeProviderCoFH {
                 .save(consumer, ID_THERMAL + ":fire_charge/invar_ingot_3");
     }
     // endregion
+
+    public static class Runner extends RecipeProvider.Runner {
+
+        public Runner(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+
+            super(output, registries);
+        }
+
+        @Override
+        protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
+
+            return new TFndRecipeProvider(registries, output);
+        }
+
+        @Override
+        public String getName() {
+
+            return "Thermal Foundation: Recipes";
+        }
+
+    }
+
 }
