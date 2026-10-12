@@ -20,7 +20,6 @@ import java.util.Map;
 import static cofh.lib.util.Utils.itemProperties;
 import static cofh.lib.util.constants.ModIds.ID_THERMAL_FOUNDATION;
 import static cofh.thermal.core.ThermalCore.BLOCKS;
-import static cofh.thermal.core.ThermalCore.ITEMS;
 import static cofh.thermal.core.init.registries.ThermalCreativeTabs.blocksTab;
 import static cofh.thermal.core.util.RegistrationHelper.*;
 import static cofh.thermal.foundation.ThermalFoundation.WOOD_TYPE_RUBBERWOOD;
@@ -47,9 +46,6 @@ public class TFndBlocks {
         FireBlock fire = (FireBlock) Blocks.FIRE;
 
         fire.setFlammable(BLOCKS.get(ID_RUBBERWOOD_LEAVES), 30, 60);
-
-        ComposterBlock.add(0.3F, ITEMS.get(ID_RUBBERWOOD_SAPLING));
-        ComposterBlock.add(0.3F, ITEMS.get(ID_RUBBERWOOD_LEAVES));
 
 
         // AXE STRIPPING

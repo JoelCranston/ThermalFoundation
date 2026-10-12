@@ -1,0 +1,34 @@
+{
+  "type": "thermal:smelter",
+  "ingredients": [
+    {
+      "value": [
+        {
+          "tag": "c:ingots/iron"
+        },
+        {
+          "tag": "c:dusts/iron"
+        }
+      ],
+      "count": 2
+    },
+    {
+      "value": [
+        {
+          "tag": "c:ingots/nickel"
+        },
+        {
+          "tag": "c:dusts/nickel"
+        }
+      ],
+      "count": 1
+    }
+  ],
+  "result": [
+    {
+      "item": "thermal:invar_ingot",
+      "count": 3
+    }
+  ],
+  "energy": 4800
+}

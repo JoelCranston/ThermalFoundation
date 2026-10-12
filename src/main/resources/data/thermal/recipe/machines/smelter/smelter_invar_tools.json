@@ -1,0 +1,19 @@
+{
+  "type": "thermal:smelter_recycle",
+  "ingredient": {
+    "tag": "c:tools/invar"
+  },
+  "result": [
+    {
+      "item": "thermal:invar_ingot",
+      "count": 1
+    }
+  ],
+  "experience": 0.3,
+  "neoforge:conditions": [
+    {
+      "tag": "c:tools/invar",
+      "type": "cofh_core:tag_exists"
+    }
+  ]
+}

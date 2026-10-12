@@ -1,0 +1,24 @@
+{
+  "type": "thermal:press",
+  "ingredients": [
+    {
+      "tag": "c:ingots/nickel"
+    },
+    {
+      "item": "thermal:press_coin_die"
+    }
+  ],
+  "result": [
+    {
+      "item": "thermal:nickel_coin",
+      "count": 3
+    }
+  ],
+  "energy": 2400,
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "thermal:press_coin_die"
+    }
+  ]
+}

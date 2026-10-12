@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "c:rubberwood_logs"
+    }
+  ],
+  "result": {
+    "id": "thermal:rubberwood_planks",
+    "count": 4
+  }
+}

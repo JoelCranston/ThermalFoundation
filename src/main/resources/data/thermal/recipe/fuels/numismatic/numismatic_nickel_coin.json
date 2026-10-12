@@ -1,0 +1,7 @@
+{
+  "type": "thermal:numismatic_fuel",
+  "ingredient": {
+    "tag": "c:coins/nickel"
+  },
+  "energy": 64000
+}
