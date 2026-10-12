@@ -28,8 +28,8 @@ other four repos were done. Forked from `CoFH/ThermalFoundation` (branch `1.20.x
 Same as CoFHCore's (`../CoFHCore/CLAUDE.md`): license, NeoForge 26.1.2.109, ModDevGradle 2.0.147, branch per target
 version, upstream code style, verify every shape against the jar.
 
-**This repo went 1.20.4 → 26.1.2 directly** (branches `1.20.4`, `26.1.2`), with no `1.21.1` branch: the API work was
-already solved and written down by the other repos' two hops. A `1.21.1` branch can be cut later if that version ships.
+Branches: `1.20.4` (upstream's base), `26.1.2` and `1.21.1`, each ported from `1.20.4` (the `1.21.1` branch was
+added afterwards, for parity with the other repos; it's checked out in `../wt-1.21.1/ThermalFoundation`).
 
 ## Current state
 
